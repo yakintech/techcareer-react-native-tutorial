@@ -1,0 +1,8 @@
+https://www.w3schools.com/js/js_conventions.asp
+
+
+https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/JavaScript
+
+https://www.w3schools.com/js/js_arrow_function.asp
+
+
