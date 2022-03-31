@@ -55,7 +55,7 @@ const PizzaTemplate = () => {
                     <Text style={{ color: 'gray' }}>*1 olives</Text>
                 </View>
 
-                <View style={{ flex: 1, justifyContent:'flex-end', height:70 }}>
+                <View style={{ flex: 1,justifyContent:'flex-end', height:70 }}>
                     <Text>8 $</Text>
                 </View>
             </View>
@@ -134,7 +134,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     cartBoxImg: {
-        resizeMode: 'contain',
         width: 70,
         height: 70,
         borderRadius: 25
