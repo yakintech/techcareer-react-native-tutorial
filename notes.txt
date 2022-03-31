@@ -7,8 +7,18 @@
 Extension yükle
 ES7+ React/Redux/React-Native snippets
 
+CSS Flex Kaynak
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://flexboxfroggy.com/
+
+https://reactnative.dev/docs/flexbox
 
 Sorular
 Fragment Nedir?
+
+Videolar
+Flex 
+https://www.youtube.com/watch?v=_s15i3MoAyE
+
 
 
