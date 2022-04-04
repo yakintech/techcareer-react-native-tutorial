@@ -1,6 +1,7 @@
 import React from "react"
 import { SafeAreaView } from "react-native"
-import ParentComp from "./tutorials/propsSample/ParentComp"
+import StateSample2 from "./tutorials/stateSample/StateSample2"
+import StateSample3 from "./tutorials/stateSample/StateSample3"
 
 function App() {
 
@@ -9,7 +10,9 @@ function App() {
     <>
       <SafeAreaView style={{ flex: 1 }}>
 
-        <ParentComp name="Bruce Dickinson"></ParentComp>
+      {/* <StateSample2></StateSample2> */}
+      <StateSample3></StateSample3>
+ 
 
       </SafeAreaView>
     </>
