@@ -11,6 +11,7 @@ const StateSample3 = () => {
         <View>
             <Text style={{fontSize:40}}>{counter}</Text>
             <Button onPress={() => setCounter(counter + 1)} title='Increase'></Button>
+            <Button onPress={() => setCounter(counter - 1)} title='Descrease'></Button>
         </View>
     )
 }
