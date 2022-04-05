@@ -1,5 +1,8 @@
 import React from "react"
 import { SafeAreaView } from "react-native"
+import EffectSample from "./effectSample/EffectSample"
+import AddProduct from "./fetchSample/AddProduct"
+import ProductList from "./fetchSample/ProductList"
 import CategoryPage from "./tutorials/stateSample/CategoryPage"
 import StateArraySample from "./tutorials/stateSample/StateArraySample"
 import StateProductListSample from "./tutorials/stateSample/StateProductListSample"
@@ -13,11 +16,7 @@ function App() {
     <>
       <SafeAreaView style={{ flex: 1 }}>
 
-      {/* <StateSample2></StateSample2> */}
-      {/* <StateSample3></StateSample3> */}
-      {/* <StateArraySample></StateArraySample> */}
-      {/* <StateProductListSample></StateProductListSample> */}
-    <CategoryPage></CategoryPage>
+        <ProductList></ProductList>
 
       </SafeAreaView>
     </>
