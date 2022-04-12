@@ -3,6 +3,7 @@ import { View, Text, FlatList, Button } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { API_URL } from '../env/config';
 import cartContext from '../store/cartContext';
+import { setCartToStorage } from '../helper/StorageHelper';
 
 
 
@@ -33,6 +34,7 @@ const ProductScreen = () => {
             cartItem.quantity = cartItem.quantity + 1;
 
             setCart([...cart]);
+            setCartToStorage([...cart]);
         }
         else{
             let newCartItem = {
@@ -42,6 +44,7 @@ const ProductScreen = () => {
                 name:item.name
             }
             setCart([...cart,newCartItem]);
+            setCartToStorage([...cart,newCartItem]);
         }
     }
 
