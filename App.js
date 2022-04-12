@@ -9,9 +9,11 @@ import NotificationScreen from "./navigationSample/NotificationScreen";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SupplierStack from "./navigationSample/SupplierStack";
 import MapViewSample from "./mapViewSample/MapViewSample";
+import ProductStack from "./navigationSample/ProductStack";
+import { CartProvider } from "./store/cartContext";
+import TabMain from "./navigationSample/TabMain";
 
 
-const Tab = createBottomTabNavigator();
 
 function App() {
 
@@ -19,34 +21,13 @@ function App() {
   //Home, Suppliers, Cart, Notification, Profile
   //41.026499894 28.984496062
   return (
-    <SafeAreaView style={{flex:1}}>
-      <MapViewSample></MapViewSample>
-    </SafeAreaView>
+    // <SafeAreaView style={{flex:1}}>
+    //   <MapViewSample></MapViewSample>
+    // </SafeAreaView>
 
-
-    // <NavigationContainer>
-
-    //   <Tab.Navigator>
-    //     <Tab.Screen
-    //       name="Home"
-    //       component={HomeScreen}
-    //       options={{
-    //         tabBarBadge: 2,
-    //         tabBarIcon: () => (<MaterialCommunityIcons name="home-alert-outline" size={40} />)
-    //       }}
-    //     />
-    //     <Tab.Screen
-    //       name="Suppliers"
-    //       component={SupplierStack}
-    //       options={{headerShown:false}}
-    //     />
-    //     <Tab.Screen name="Cart" component={CartScreen} />
-    //     <Tab.Screen name="Notification" component={NotificationScreen} />
-    //     <Tab.Screen name="Profile" component={CartScreen} />
-
-    //   </Tab.Navigator>
-
-    // </NavigationContainer>
+    <CartProvider>
+      <TabMain></TabMain>
+    </CartProvider>
 
 
   )
