@@ -60,7 +60,7 @@ const TabMain = () => {
 
                 <Tab.Screen
                     options={{
-                        headerShown: false,
+                        // headerShown: false,
                         tabBarIcon: () => (<MaterialCommunityIcons name="alert-circle" size={40} />)
                     }}
                     name="Notification" component={NotificationScreen} />
