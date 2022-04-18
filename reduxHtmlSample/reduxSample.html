@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+</head>
+
+<body>
+
+    <div>
+        Counter: <span id='counter'>0</span>
+
+        <div>
+            <label>Number</label>
+            <input type='text' id='number' />
+        </div>
+
+        <button id='increment'> + </button>
+        <button id='decrement'> - </button>
+        <hr>
+        Counter-2: <h1 id='counter2'>0</span>
+
+
+    </div>
+</body>
+<script>
+    //REDUCER
+    function counterOperation(state, action) {
+
+        if (typeof state === 'undefined') {
+            return 0
+        }
+
+        switch (action.type) {
+            case 'INCREMENT':
+                return state + action.payload
+            case 'DECREMENT':
+                return state - action.payload
+            default:
+                return state;
+        }
+    }
+
+    var store = Redux.createStore(counterOperation)
+
+    function render() {
+        document.getElementById('counter').innerHTML = store.getState().toString();
+    }
+
+    function render2() {
+        document.getElementById('counter2').innerHTML = store.getState().toString();
+    }
+
+
+    // function hello() {
+    //     alert("State değişti kardeş!");
+    // }
+
+    store.subscribe(render);
+    store.subscribe(render2);
+    // store.subscribe(hello);
+
+
+
+
+    document.getElementById("increment").addEventListener("click", function () {
+
+        let value = Number(document.getElementById('number').value)
+        store.dispatch({ type: 'INCREMENT', payload: value })
+
+    })
+
+
+    document.getElementById("decrement").addEventListener("click", function () {
+
+        let value = Number(document.getElementById('number').value)
+        store.dispatch({ type: 'DECREMENT', payload: value })
+
+    })
+
+
+</script>
+
+</html>
