@@ -3,18 +3,20 @@ import React, { useContext, useEffect } from 'react'
 import { View, Text } from 'react-native'
 import CartScreen from './CartScreen'
 import HomeScreen from './HomeScreen'
+import ProfileScreen from './ProfileScreen'
 import NotificationScreen from './NotificationScreen'
 import ProductStack from './ProductStack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import cartContext from '../store/cartContext'
 import { getCartStorage } from '../helper/StorageHelper'
+import { connect } from 'react-redux'
 
 
 
 const Tab = createBottomTabNavigator();
 
-const TabMain = () => {
+const TabMain = (props) => {
 
     const { cart, setCart } = useContext(cartContext);
 
@@ -33,9 +35,10 @@ const TabMain = () => {
             <Tab.Navigator>
                 <Tab.Screen
                     name="Home"
+                    
                     component={HomeScreen}
                     options={{
-
+                        tabBarBadge: props.todos?.length,
                         tabBarIcon: () => (<MaterialCommunityIcons name="home" size={40} />)
                     }}
                 />
@@ -70,7 +73,7 @@ const TabMain = () => {
 
                         tabBarIcon: () => (<MaterialCommunityIcons name="account-cowboy-hat" size={40} />)
                     }}
-                    name="Profile" component={CartScreen} />
+                    name="Profile" component={ProfileScreen} />
 
             </Tab.Navigator>
 
@@ -79,4 +82,10 @@ const TabMain = () => {
     )
 }
 
-export default TabMain
+const mapStateToProps = (state) => {
+    return {
+        todos: state
+    }
+}
+
+export default connect(mapStateToProps)(TabMain)
