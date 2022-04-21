@@ -11,6 +11,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import cartContext from '../store/cartContext'
 import { getCartStorage } from '../helper/StorageHelper'
 import { connect } from 'react-redux'
+import TodoScreen from './TodoScreen'
 
 
 
@@ -73,7 +74,7 @@ const TabMain = (props) => {
 
                         tabBarIcon: () => (<MaterialCommunityIcons name="account-cowboy-hat" size={40} />)
                     }}
-                    name="Profile" component={ProfileScreen} />
+                    name="Profile" component={TodoScreen} />
 
             </Tab.Navigator>
 
